@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<!--<div class="container-fluid" >-->
+                <div class="row mt-5 pt-5">
+                        <div class="col-sm-12 col-lg-6">
+                                <div style="width :50%;padding-left :100;margin-top :100;">
+                                        <img src="{{ object.image.url }}" height ="700" width="500" class="img-responsive">
+                                </div>
+                        </div>
+                <div class="col-sm-12 col-lg-6">
+                        <div style="width :50%; margin-top :100;padding-left :50;">
+                                <div class="card" style="width: 47rem; height: 100%;padding-left:50;">
+                                        <div class="card-body">
+                                                <h2 class="card-title">{{ object.title }}</h2>
+                                                        <h6 class="card-subtitle mb-5 text-muted">Products/supremeornate/</h6>
+                                                        <p class="card-text " >{{ object.description|linebreaks }}</br>
+                                                        <h5 class="mb-3" style="color :#EE6C6C;" >Colors Available</h5>
+                                                        <div class="row pl-5">
+                                                                <a style="text-decoration:none;" href="#"><div class="col-lg-1 mr-1" style="background-color :#424344;color: #424344;">1</div></a>
+
+                                                                <a style="text-decoration:none;" href="#"><div class="col-lg-1 mr-1" style="background-color :#842828;color:#842828;">1</div></a>
+                                                        </div>
+                                                        <br>
+                                                        <h4 class="mb-5" style="color :#EE6C6C;"  >{{ object.price }}</h4>
+
+                                                        </p>
+                                                        {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+                                         </div>
+                                </div>
+                        </div>
+                </div>
+{% endblock %}
+        <!--</div>-->
+<!--
+        <div class="row mt-5 pt-5">
+                <div class="col-12 col-md-6">
+
+
+                        <h1>{ object.title }}</h1> </br>
+                        { object.timestamp|timesince }} ago
+                        { object.description|linebreaks }} </br>
+                        { if object.image %}
+                                <img src ='{ object.image.url }}' class =img-fluid'/>
+                        { endif %}
+                </div>
+                <div class="col-12 col-md-6">
+		<!-{ cart }}->
+% extends "base.html" %}
+
+% block content %}
+
+	<div class="row mt-5 pt-5">
+		<div class="col-12 col-md-6">
+
+
+			<h1>{ object.title }}</h1> </br>
+			{ object.timestamp|timesince }} ago
+			{ object.description|linebreaks }} </br>
+			{ if object.image %}
+				<img src ='{ object.image.url }}' class =img-fluid'/>
+			{ endif %}
+		</div>
+		<div class="col-12 col-md-6">
+			<!-{ cart }}->
+			% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+			<!-% if object in cart.products.all %}
+				In cart<button class='btn btn-link'>Remove ?</button>
+			% else %}
+				<button class="btn btn-success">Add to Cart</button>
+				% endif %->
+		</div>
+	</div>
+
+
+% endblock %}-->

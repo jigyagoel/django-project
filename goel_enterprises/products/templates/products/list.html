@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+<!--{ qs }}
+
+{
+'paginator': None,
+'page_obj': None,
+'is_paginated': False,
+'object_list': <QuerySet [<Product: Supreme Omnate - Black/Red Plastic Cushion Chairs>, <Product: Supreme Futura Plastic Chairs>]>,
+'product_list': <QuerySet [<Product: Supreme Omnate - Black/Red Plastic Cushion Chairs>, <Product: Supreme Futura Plastic Chairs>]>,
+'view': <products.views.ProductListView object at 0x7f274c2614e0>
+}
+
+{ paginator }}
+{ is_paginated }}
+{object_list}-->
+
+<!--{ object_list }-->
+
+
+{% block content %}
+		<div class='row mt-5 pt-5 mb-4'>
+			{% for obj in object_list %}
+			<div class='col-sm-12 col-md-4 mb-4'> 
+				<!--{ forloop.counter }}-->  <!--counts the iterations for us -->
+		 			{% include "products/snippets/card.html" with instance=obj %}
+					<!-- kind of cool but not so pretty to use % cycle '<h1>Hello There</h1>' '' %}-->
+					<!--% if forloop.counter|divisibleby:2 %}
+				    </div></div><div class="row"><div class="col-lg-4 col-md-12"><hr></div>
+					    % else %}
+						</div>
+						% endif %}-->
+		</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

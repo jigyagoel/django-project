@@ -1,0 +1,19 @@
+<div class="card-deck">
+	<div class ="card" ><!--style = "width :20rem;">-->
+	{% if instance.image %}
+		<a href ="{{ instance.get_absolute_url }}">
+			<img class ="card-img-top" style = "height :20rem;" src="{{ instance.image.url }}" alt="{{ instance.title }} logo">
+		</a>
+	{% endif %}
+	<div class ="card-body" style = "height :15rem;">
+		<h4 class="card-title"><a href ="{{ instance.get_absolute_url }}">{{ instance.title }}</a></h4>
+                <p class =" card-text">
+			{{ instance.price }}
+		<!--{{ instance.description|truncatewords:12 }}-->
+		</p>
+		<!--<a href ="{{ instance.get_absolute_url }}" class = "btn btn-primary">View</a>-->
+		<!--<a href ="{% url 'products:detail' slug=instance.slug %}" class = "btn btn-warning">URL shortcut</a>-->
+	</div>
+</div>
+
+</div>
